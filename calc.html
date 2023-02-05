@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<script>function evaluate() {
+        var answer1 = document.getElementById("answer").value;
+        var result1 = eval(answer1);
+        document.getElementById("answer").value += "=" + result1;
+    }
+
+    function display(x) {
+        if (x == "=") {
+            evaluate();
+        }
+        else {
+            document.getElementById("answer").value += x;
+        }
+    }</script>
+<body>
+    <center>
+        <input type="text" id="answer" placeholder="0" /><br><br>
+        <input type="button" value="7" onclick="document.getElementById('answer').value+='7'" />
+        <input type="button" value="8" onclick="document.getElementById('answer').value+='8'" />
+        <input type="button" value="9" onclick="document.getElementById('answer').value+='9'" />
+        <input type="button" value="+" onclick="document.getElementById('answer').value+='+'" />
+        <br>
+        <input type="button" value="4" onclick="document.getElementById('answer').value+='4'" />
+        <input type="button" value="5" onclick="document.getElementById('answer').value+='5'" />
+        <input type="button" value="6" onclick="document.getElementById('answer').value+='6'" />
+        <input type="button" value="-" onclick="document.getElementById('answer').value+='-'" />
+        <br>
+        <input type="button" value="1" onclick="document.getElementById('answer').value+='1'" />
+        <input type="button" value="2" onclick="document.getElementById('answer').value+='2'" />
+        <input type="button" value="3" onclick="document.getElementById('answer').value+='3'" />
+        <input type="button" value="*" onclick="document.getElementById('answer').value+='*'" />
+        <br>
+        <input type="button" value="C" onclick="document.getElementById('answer').value=''" />
+        <input type="button" value="0" onclick="document.getElementById('answer').value+='0'" />
+        <input type="button" value="/" onclick="document.getElementById('answer').value+='/'" />
+        <input type="button" value="=" onclick="display('=')" />
+
+        <br><br>
+</body>
+</center>
+</html>

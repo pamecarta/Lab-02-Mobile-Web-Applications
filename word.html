@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Game</title>
+</head>
+<body>
+    <h3>Word Game</h3>
+    <p>Form as many words as you can! Have fun :)</p>
+    <div id="buttons">
+        <button id="M">M</button>
+        <button id="I">I</button>
+        <button id="D">D</button>
+        <button id="P">P</button>
+        <button id="O">O</button>
+        <button id="I">I</button>
+        <button id="N">N</button>
+        <button id="T">T</button>
+    </div>
+    <div id="display">
+    </div>
+    <button id="add">Click here to form a new word</button>
+    <button id="reset">Reset</button>
+    <div id="words">
+    </div>
+    <script>
+        const buttons = document.querySelectorAll("#buttons button");
+        const display = document.querySelector("#display");
+        const add = document.querySelector("#add");
+        const reset = document.querySelector("#reset");
+        const words = document.querySelector("#words");
+
+        let currentWord = "";
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                currentWord += this.textContent;
+                display.textContent = currentWord;
+            });
+        });
+
+        add.addEventListener("click", function () {
+            const wordElement = document.createElement("div");
+            wordElement.textContent = currentWord;
+            words.appendChild(wordElement);
+            currentWord = "";
+            display.textContent = currentWord;
+        });
+
+        reset.addEventListener("click", function () {
+            currentWord = "";
+            display.textContent = currentWord;
+            words.innerHTML = "";
+        });
+    </script>
+</body>
+</html>
